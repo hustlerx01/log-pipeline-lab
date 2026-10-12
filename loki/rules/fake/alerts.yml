@@ -1,0 +1,18 @@
+groups:
+  - name: log-alerts
+    rules:
+      - alert: Nginx5xxRateHigh
+        expr: sum(count_over_time({job="nginx", status_class="5xx"}[5m])) / sum(count_over_time({job="nginx"}[5m])) > 0.05
+        for: 1m
+        labels: {severity: critical}
+        annotations: {summary: "5xx ratio {{ $value | humanizePercentage }} over 5m"}
+      - alert: SSHBruteForce
+        expr: sum by (src_ip) (count_over_time({job="auth", ssh_event="Failed password"} | json [5m])) > 10
+        labels: {severity: high, mitre: T1110.001}
+        annotations: {summary: "{{ $labels.src_ip }} {{ $value }} failed SSH logins in 5m"}
+      - alert: SlowRequests
+        expr: sum(count_over_time({job="nginx"} | json | request_time > 1 [5m])) > 20
+        labels: {severity: warning}
+      - alert: AppErrorSpike
+        expr: sum by (service) (count_over_time({job="app", level="error"} | json [5m])) > 20
+        labels: {severity: warning}
