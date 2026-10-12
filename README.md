@@ -1,6 +1,6 @@
 # log-pipeline-lab: Fluent Bit → Loki with parsing, enrichment and LogQL alert rules
 
-> **Lab project.** The logs are synthetic and seeded (`gen/generate_logs.py`), with three injected incidents and a `truth.json` of expected counts. Everything below ran on real Fluent Bit 5.1.3 and Loki 3.2.0 binaries on my lab box.
+> **Lab project.** The logs are synthetic and seeded (`gen/generate_logs.py`), with three injected incidents and a `truth.json` of expected counts. Everything below ran on real Fluent Bit 5.1.3 and Loki 3.2.0 binaries on my lab machine.
 
 ## Problem
 Raw logs in files aren't observability. You need **structured fields** (status, latency, src_ip), **low-cardinality labels** so Loki stays cheap, **noise dropped at the edge** (LB health checks), and **alerts on log patterns** (5xx ratio, SSH brute force, slow requests). You also need proof that the pipeline doesn't silently lose or mis-parse lines. Here every count in Loki is compared against the generator's ground truth.
