@@ -1,0 +1,18 @@
+== ingestion vs ground truth ==
+PASS  nginx lines (healthz dropped)    loki= 1659  truth=1659
+PASS  nginx 5xx                        loki=   65  truth=65
+PASS  sshd brute-force lines           loki=   19  truth=19
+PASS  app error lines                  loki=   65  truth=65
+PASS  slow search (>1s)                loki=   36  truth=36
+
+== alert rules evaluated as instant queries at end of run (real 5m windows; the 5xx burst is 2-3 min before end) ==
+Nginx5xxRateHigh   FIRING  [({}, 0.083)]
+SSHBruteForce      ok      []
+SlowRequests       ok      []
+AppErrorSpike      FIRING  [({'service': 'products'}, 24.0), ({'service': 'search'}, 21.0)]
+
+== backtest: rule condition true at minute T-k (window 5m), k=0..10 ==
+Nginx5xxRateHigh   T-10 ........### T-0
+SSHBruteForce      T-10 ...#####... T-0
+SlowRequests       T-10 .....#####. T-0
+AppErrorSpike      T-10 ........### T-0

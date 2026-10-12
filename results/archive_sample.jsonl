@@ -1,0 +1,8 @@
+{"user":"-","method":"GET","path":"/api/search","status_class":"2xx","size":1386,"referer":"-","agent":"Mozilla/5.0","request_time":0.05,"status":200,"remote":"198.51.100.4","env":"lab","host_role":"web"}
+{"user":"-","method":"GET","path":"/","status_class":"2xx","size":3717,"referer":"-","agent":"Mozilla/5.0","request_time":0.012,"status":200,"remote":"198.51.100.33","env":"lab","host_role":"web"}
+{"user":"-","method":"GET","path":"/","status_class":"2xx","size":7155,"referer":"-","agent":"Mozilla/5.0","request_time":0.013,"status":200,"remote":"198.51.100.6","env":"lab","host_role":"web"}
+{"user":"-","method":"GET","path":"/api/checkout","status_class":"2xx","size":3161,"referer":"-","agent":"Mozilla/5.0","request_time":0.019,"status":200,"remote":"198.51.100.20","env":"lab","host_role":"web"}
+{"user":"-","method":"GET","path":"/","status_class":"2xx","size":7205,"referer":"-","agent":"Mozilla/5.0","request_time":0.062,"status":200,"remote":"198.51.100.35","env":"lab","host_role":"web"}
+{"user":"-","method":"GET","path":"/api/checkout","status_class":"2xx","size":4270,"referer":"-","agent":"Mozilla/5.0","request_time":0.057,"status":200,"remote":"198.51.100.20","env":"lab","host_role":"web"}
+{"user":"-","method":"GET","path":"/static/app.js","status_class":"2xx","size":8804,"referer":"-","agent":"Mozilla/5.0","request_time":0.014,"status":200,"remote":"198.51.100.20","env":"lab","host_role":"web"}
+{"user":"-","method":"GET","path":"/api/search","status_class":"2xx","size":2

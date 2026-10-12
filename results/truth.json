@@ -1,0 +1,8 @@
+{
+ "nginx_5xx": 65,
+ "nginx_total": 2000,
+ "healthz": 341,
+ "ssh_failed_bruteforce_ip": 19,
+ "slow_search": 36,
+ "app_errors": 65
+}
